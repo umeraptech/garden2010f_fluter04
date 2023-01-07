@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main()=>runApp(MaterialApp(
-  home:NinjaAppCard(),
+void main()=>runApp(const MaterialApp(
+  home: NinjaAppCard(),
   debugShowCheckedModeBanner: false,
 ));
 
@@ -23,20 +23,20 @@ class NinjaAppCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/cat.jpg'),
+            const CircleAvatar(
+              backgroundImage: AssetImage('assets/thanos.jpg'),
               backgroundColor: Colors.red,
               radius: 80.0,
             ),
-            SizedBox(height: 40.0),
-            Text(
+            const SizedBox(height: 40.0),
+            const Text(
               'Name',
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
               ),
             ),
-           SizedBox(height: 10.0,),
+           const SizedBox(height: 10.0,),
             Text(
               'Sub-Zero',
               style: TextStyle(
@@ -46,8 +46,8 @@ class NinjaAppCard extends StatelessWidget {
                 fontWeight: FontWeight.bold
               ),
             ),
-            SizedBox(height: 30.0,),
-            Text(
+            const SizedBox(height: 30.0,),
+            const Text(
               'Power level',
               style: TextStyle(
                 color: Colors.grey,
