@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
-void main()=>runApp(const MaterialApp(
-  home: NinjaAppCard(),
-  debugShowCheckedModeBanner: false,
-));
+void main() => runApp(const MaterialApp(
+      home: NinjaAppCard(),
+      debugShowCheckedModeBanner: false,
+    ));
 
-class NinjaAppCard extends StatelessWidget {
+class NinjaAppCard extends StatefulWidget {
   const NinjaAppCard({Key? key}) : super(key: key);
 
+  @override
+  State<NinjaAppCard> createState() => _NinjaAppCardState();
+}
+
+class _NinjaAppCardState extends State<NinjaAppCard> {
+ int power = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +25,7 @@ class NinjaAppCard extends StatelessWidget {
         elevation: 0.0,
       ),
       body: Padding(
-        padding:  EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -36,17 +42,20 @@ class NinjaAppCard extends StatelessWidget {
                 letterSpacing: 2.0,
               ),
             ),
-           const SizedBox(height: 10.0,),
+            const SizedBox(
+              height: 10.0,
+            ),
             Text(
               'Sub-Zero',
               style: TextStyle(
-                color: Colors.amber[200],
-                letterSpacing: 2.0,
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold
-              ),
+                  color: Colors.amber[200],
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 30.0,),
+            const SizedBox(
+              height: 30.0,
+            ),
             const Text(
               'Power level',
               style: TextStyle(
@@ -54,24 +63,29 @@ class NinjaAppCard extends StatelessWidget {
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(height: 10.0,),
+            const SizedBox(
+              height: 10.0,
+            ),
             Text(
-              '5',
+              '$power',
               style: TextStyle(
                   color: Colors.amber[200],
                   letterSpacing: 2.0,
                   fontSize: 28.0,
-                  fontWeight: FontWeight.bold
-              ),
+                  fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 30.0,),
+            const SizedBox(
+              height: 30.0,
+            ),
             Row(
               children: <Widget>[
                 Icon(
                   Icons.email,
                   color: Colors.grey[400],
                 ),
-                SizedBox(width: 10.0,),
+                const SizedBox(
+                  width: 10.0,
+                ),
                 Text(
                   'maulahjat@gmail.com',
                   style: TextStyle(
@@ -84,6 +98,15 @@ class NinjaAppCard extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          //print("Button is clicked");
+          setState(() {
+            power +=1;
+          });
+        },
+        child: Text("+"),
       ),
     );
   }
